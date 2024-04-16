@@ -1,19 +1,21 @@
 use std::time::{Instant};
 
-pub fn insertion_sort(mut vec:Vec<i32>) {
+pub fn insertion_sort(mut vec: Vec<i32>) {
+    println!("---[ Insertion Sort ]----------------------------------------");
+    println!("Unsorted numbers:\t{:?}", &vec);
+
     let start = Instant::now();
-    for  i in 1..vec.len() {
+    for i in 1..vec.len() {
         let key = vec[i];
         let mut j = i;
 
-        while j>0 && key < vec[j-1] {
+        while j > 0 && key < vec[j - 1] {
             vec[j] = vec[j - 1];
             j -= 1;
         }
         vec[j] = key;
     }
-    let duration  = start.elapsed().as_nanos();
-
-    println!("sorted_vector:\t\t{:?}", &vec);
-    println!("duration: {:?}ns\n", duration);
+    let duration = start.elapsed().as_nanos();
+    println!("Sorted numbers:\t\t{:?}", &vec);
+    println!("Time taken to sort:\t{:?} ns\n", duration);
 }

@@ -8,7 +8,5 @@ pub fn gen_vec(size:i32) -> Vec<i32> {
     for _i in 0..size {
         vector.push(rng.gen_range(0..20));
     }
-
-    println!("unsorted_vector:\t{:?}", &vector);
     vector
 }
